@@ -42,11 +42,11 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="image_url" class="form-label">Hình ảnh Banner</label>
+                                            <label for="image_path" class="form-label">Hình ảnh Banner</label>
                                             <div class="mb-2">
-                                                <img src="{{ asset('storage/' . $banner->image_url) }}" alt="Image" width="150">
+                                                <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Image" width="150">
                                             </div>
-                                            <input type="file" class="form-control-file" id="image_url" name="image_url" accept="image/*">
+                                            <input type="file" class="form-control-file" id="image_path" name="image_path" accept="image/*">
                                         </div>
 
                                         <div class="mb-3">

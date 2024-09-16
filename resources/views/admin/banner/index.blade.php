@@ -45,7 +45,7 @@
                                         <tr>
                                             <td>{{$banner->id}}</td>
                                             <td>{{$banner->title}}</td>
-                                            <td><img src="{{ asset('storage/' . $banner->image_url) }}" alt="{{ $banner->title }}" width="100"></td>
+                                            <td><img src="{{ asset('storage/' . $banner->image_path) }}" alt="{{ $banner->title }}" width="100"></td>
                                             <td>{{$banner->link}}</td>
                                             <td>    
                                                 <a href="/admin/banner/edit/{{ $banner->id }}" class="btn btn-warning btn-sm">Sửa</a>

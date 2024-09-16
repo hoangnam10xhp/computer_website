@@ -33,18 +33,18 @@ class BannerController extends Controller
         
         $request->validate([
             'title'=>'required|string|max:255',
-            'image_url'=>'nullable|image|mimes:png,svg,jpeg|max:10048',
+            'image_path'=>'nullable|image|mimes:png,svg,jpeg|max:10048',
             'link'=>'required|string|max:255',
         ]);
 
         $image = null;
-        if ($request->hasFile('image_url')) {
-            $image = $request->file('image_url')->store('image_url', 'public');
+        if ($request->hasFile('image_path')) {
+            $image = $request->file('image_path')->store('image_path', 'public');
         }
 
         Banner::create([
             'title'=>$request->input('title'),
-            'image_url'=>$image,
+            'image_path'=>$image,
             'link'=>$request->input('link'),
         ]);
 
@@ -75,18 +75,18 @@ class BannerController extends Controller
     {
         $request->validate([
             'title'=>'required|string|max:255',
-            'image_url'=>'nullable|image|mimes:png,svg,jpeg|max:10048',
+            'image_path'=>'nullable|image|mimes:png,svg,jpeg|max:10048',
             'link'=>'required|string|max:255',
         ]);
 
         $banner = Banner::findOrFail($id);
 
-        $image = $banner->image_url;
-        if ($request->hasFile('image_url')) {
-            if($banner->image_url){
-                Storage::disk('public')->delete($banner->image_url);
+        $image = $banner->image_path;
+        if ($request->hasFile('image_path')) {
+            if($banner->image_path){
+                Storage::disk('public')->delete($banner->image_path);
             }
-            $banner->image_url = $request->file('image_url')->store('image_url','public');
+            $banner->image_path = $request->file('image_path')->store('image_path','public');
         }
 
         $banner->update([

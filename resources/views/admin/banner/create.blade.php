@@ -39,8 +39,8 @@
                                         <input type="text" class="form-control" id="title" name="title" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="image_url" class="form-label">Image Banner</label>
-                                        <input type="file" class="form-control-file" accept="image/*" id="image_url" name="image_url">
+                                        <label for="image_path" class="form-label">Image Banner</label>
+                                        <input type="file" class="form-control-file" accept="image/*" id="image_path" name="image_path">
                                     </div>
                                     <div class="mb-3">
                                         <label for="link" class="form-label">Link</label>
